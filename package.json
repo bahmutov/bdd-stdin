@@ -1,0 +1,38 @@
+{
+  "name": "bdd-stdin",
+  "version": "0.1.0",
+  "description": "Utility for easily mocking user responses for BDD unit tests that ask user a question.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec test/*-spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/bdd-stdin.git"
+  },
+  "keywords": [
+    "bdd",
+    "tdd",
+    "unit",
+    "test",
+    "test",
+    "mocha",
+    "jasmine",
+    "utility",
+    "stdin",
+    "response"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/bdd-stdin/issues"
+  },
+  "homepage": "https://github.com/bahmutov/bdd-stdin",
+  "devDependencies": {
+    "bluebird": "2.9.25",
+    "mocha": "2.2.4"
+  },
+  "dependencies": {
+    "mock-stdin": "0.3.0"
+  }
+}
