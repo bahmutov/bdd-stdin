@@ -30,9 +30,14 @@
   "homepage": "https://github.com/bahmutov/bdd-stdin",
   "devDependencies": {
     "bluebird": "2.9.25",
-    "mocha": "2.2.4"
+    "mocha": "2.2.4",
+    "pre-git": "0.2.1"
   },
   "dependencies": {
     "mock-stdin": "0.3.0"
-  }
+  },
+  "pre-commit": [
+    "npm test",
+    "npm version"
+  ]
 }
