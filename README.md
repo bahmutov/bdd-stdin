@@ -47,6 +47,27 @@ describe('ask', function () {
 });
 ```
 
+You can even provide answers before each question individually
+
+```js
+it('asks three questions separately', function () {
+  bddStdin('one');
+  return ask('question 1')
+    .then(function (response) {
+      console.assert(response === 'one', 'received response ' + response);
+      bddStdin('two');
+      return ask('question 2');
+    })
+    .then(function (response) {
+      console.assert(response === 'two', 'received response ' + response);
+      bddStdin('three');
+      return ask('question 3');
+    }).then(function (response) {
+      console.assert(response === 'three', 'received response ' + response);
+    });
+});
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &copy; 2015

@@ -1,6 +1,6 @@
 {
   "name": "bdd-stdin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Utility for easily mocking user responses for BDD unit tests that ask user a question.",
   "main": "index.js",
   "scripts": {
