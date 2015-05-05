@@ -33,7 +33,8 @@
     "inquirer": "0.8.3",
     "mocha": "2.2.4",
     "pre-git": "0.2.1",
-    "really-need": "1.6.3"
+    "really-need": "1.6.3",
+    "sinon": "1.14.1"
   },
   "dependencies": {
     "mock-stdin": "0.3.0"

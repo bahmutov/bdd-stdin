@@ -37,7 +37,6 @@ describe('mock prompt', function () {
     });
   });
 
-
   it('select first choice', function (done) {
     inquirer.prompt([question], function (answers) {
       var response = answers.all;
