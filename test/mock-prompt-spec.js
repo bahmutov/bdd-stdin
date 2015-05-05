@@ -41,7 +41,9 @@ describe('mock prompt', function () {
                 all: ['one']
               });
             }, 0);
+            return;
           }
+
           setTimeout(function () {
             _prompt(question, cb);
           }, 0);
