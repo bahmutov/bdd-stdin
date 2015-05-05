@@ -12,6 +12,8 @@ I needed something to help [unit testing CLI apps](http://glebbahmutov.com/blog/
 
 `npm install bdd-stdin --save-save`
 
+## typing text
+
 ```js
 var ask = require('./ask');
 // ask is promise-returning stdin question
@@ -65,6 +67,53 @@ it('asks three questions separately', function () {
     }).then(function (response) {
       console.assert(response === 'three', 'received response ' + response);
     });
+});
+```
+
+## selecting choice using up / down keys
+
+If you use a 3rd party library, like [inquirer](https://github.com/SBoudrias/Inquirer.js) you need to select
+the right choice using up / down keys. The `bddStdin` object has object property `keys` with `up`, `down`, `left`
+and `right` codes. 
+
+For example the follwing code
+
+```js
+var inquirer = require('inquirer');
+var question = {
+  type: 'list',
+  name: 'choice',
+  message: 'pick three',
+  choices: ['one', 'two', 'three']
+};
+inquirer.prompt([question], function (answers) {
+  console.log('user picked', answers.choice);
+});
+```
+
+presents the user with the following prompt:
+
+    ? pick three: (Use arrow keys)
+    ❯ one 
+      two 
+      three
+
+We can provide mock answer in our unit tests
+
+```js
+var bddStdin = require('bdd-stdin');
+it('selects the third choice', function (done) {
+  bddStdin(bddStdin.keys.down, bddStdin.keys.down, '\n');
+  var question = {
+    type: 'list',
+    name: 'choice',
+    message: 'pick three',
+    choices: ['one', 'two', 'three']
+  };
+  inquirer.prompt([question], function (answers) {
+    console.assert(response === 'three', 'received response ' + response);
+    done();
+  });
 });
 ```
 
