@@ -32,7 +32,8 @@
     "bluebird": "2.9.25",
     "inquirer": "0.8.3",
     "mocha": "2.2.4",
-    "pre-git": "0.2.1"
+    "pre-git": "0.2.1",
+    "really-need": "1.6.3"
   },
   "dependencies": {
     "mock-stdin": "0.3.0"
