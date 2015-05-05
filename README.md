@@ -72,7 +72,7 @@ it('asks three questions separately', function () {
 
 ## selecting choice using up / down keys
 
-If you use a 3rd party library, like [inquirer](https://github.com/SBoudrias/Inquirer.js) you need to select
+If you use a 3rd party library, like [inquirer][inquirer] you need to select
 the right choice using up / down keys. The `bddStdin` object has object property `keys` with `up`, `down`, `left`
 and `right` codes. 
 
@@ -116,6 +116,24 @@ it('selects the third choice', function (done) {
   });
 });
 ```
+
+## selecting multiple choices
+
+When using multiple choices using [inquirer][inquirer] you need to select each choice
+using space character, then move down using DOWN arrow key. Visually it is presented like this
+
+    ? pick options one and three: 
+     ◉ one
+     ◯ two
+    ❯◉ three
+
+Using `bdd-stdin` one can enter these values using the same keyboard characters
+
+```js
+bddStdin(' ', bddStdin.keys.down, ' ', '\n');
+```
+
+[inquirer]: https://github.com/SBoudrias/Inquirer.js
 
 ### Small print
 
