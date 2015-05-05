@@ -1,21 +1,5 @@
-var Promise = require('bluebird');
 var bddStdin = require('..');
 require = require('really-need');
-
-function all(message, list) {
-  return new Promise(function (resolve) {
-    var question = {
-      type: 'checkbox',
-      name: 'all',
-      message: message,
-      choices: list
-    };
-    inquirer.prompt([question], function (answers) {
-      console.log('user picked options', answers.all);
-      resolve(answers.all);
-    });
-  });
-}
 
 describe('mock prompt', function () {
 
