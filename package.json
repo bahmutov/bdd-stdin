@@ -4,7 +4,8 @@
   "description": "Utility for easily mocking user responses for BDD unit tests that ask user a question.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R spec test/*-spec.js"
+    "test": "mocha -R spec test/*-spec.js",
+    "pre-commit": "mocha test/*-spec.js --grep nogit --invert"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,7 @@
     "mock-stdin": "0.3.0"
   },
   "pre-commit": [
-    "npm test -- --grep nogit --invert",
+    "npm run pre-commit",
     "npm version"
   ]
 }

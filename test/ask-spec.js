@@ -42,10 +42,10 @@ describe('ask', function () {
       });
   });
 
-  it('asks three questions separately', function () {
+  it('asks three questions separately', function (done) {
 
     bddStdin('one');
-    return ask('question 1')
+    ask('question 1')
       .then(function (response) {
         console.assert(response === 'one', 'received response ' + response);
         bddStdin('two');
@@ -58,6 +58,7 @@ describe('ask', function () {
         return ask('question 3');
       }).then(function (response) {
         console.assert(response === 'three', 'received response ' + response);
+        done();
       });
   });
 
